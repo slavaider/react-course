@@ -1,18 +1,19 @@
 import React from 'react';
 import './Card.scss';
 import img from '../../assets/img/test.jpg';
+import User from '../../interfaces/user';
 
 type CardProps = {
-  name: string;
+  user: User;
 };
 
-const Card: React.FC<CardProps> = ({ name }: CardProps) => {
+const Card: React.FC<CardProps> = ({ user }: CardProps) => {
   return (
     <div className="Card col-xs-12 col-md-4">
       <div className="card bg-dark text-white mx-1 my-1">
-        <img src={img} className="card-img-top" alt={name} />
+        <img src={img} className="card-img-top" alt={user.name} />
         <div className="card-body">
-          <p className="card-text text-center">{name}</p>
+          <p className="card-text text-center">{user.name}</p>
         </div>
         <div className="card-footer">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus,
