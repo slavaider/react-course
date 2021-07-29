@@ -1,15 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './sass/style.scss';
-
-import img from './assets/img/test.jpg';
-
-const App = () => (
-  <>
-    <img src={img} alt="img" />
-    <h1>My React and TypeScript App!! {new Date().toLocaleDateString()}</h1>
-  </>
-);
+import App from './components/app/App';
 
 ReactDOM.render(
   <React.StrictMode>

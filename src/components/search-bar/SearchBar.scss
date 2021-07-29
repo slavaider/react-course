@@ -1,0 +1,39 @@
+.SearchBar {
+  .searchbar {
+    position: relative;
+    margin-bottom: auto;
+    margin-top: auto;
+    height: 60px;
+    background-color: #353b48;
+    border-radius: 30px;
+    padding: 10px;
+  }
+
+  .search_input {
+    color: white;
+    border: 0;
+    width: 100%;
+    outline: 0;
+    background: none;
+    line-height: 40px;
+    padding: 0 50px 0 20px;
+    caret-color: red;
+  }
+
+  .search_icon {
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    height: 40px;
+    width: 40px;
+    float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+  }
+}
+

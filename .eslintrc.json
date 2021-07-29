@@ -1,13 +1,15 @@
 {
   "parser":  "@typescript-eslint/parser",
   "extends":  [
+    "airbnb-typescript/base",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended"
   ],
   "parserOptions":  {
     "ecmaVersion":  2018,
-    "sourceType":  "module"
+    "sourceType":  "module",
+    "project": "./tsconfig.json"
   },
   "plugins": ["prettier"],
   "rules": {
@@ -28,6 +30,16 @@
   "settings": {
     "react": {
       "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ]
+      }
     }
   },
   "overrides": [
