@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.scss';
 import CardWrapper from '../card-wrapper/CardWrapper';
 import ProfileForm from '../profile-form/ProfileForm';
-import User from '../../interfaces/user';
+import { User } from '../../interfaces';
 
 const App: React.FC = () => {
   const [users, setUsers] = useState<Array<User>>([]);

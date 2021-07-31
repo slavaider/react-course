@@ -1,3 +1,8 @@
 export default interface User {
-  name: string;
+  firstName: string;
+  lastName: string;
+  country: string;
+  zip: string;
+  birthday: string;
+  sex: string;
 }

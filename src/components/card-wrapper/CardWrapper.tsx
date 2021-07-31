@@ -1,7 +1,7 @@
 import React from 'react';
 import './CardWrapper.scss';
 import Card from '../card/Card';
-import User from '../../interfaces/user';
+import { User } from '../../interfaces';
 
 type CardProps = {
   items: User[];
