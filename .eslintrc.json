@@ -17,7 +17,8 @@
       "error",
       {
         "singleQuote": true,
-        "trailingComma": "all"
+        "trailingComma": "all",
+        "endOfLine": "auto"
       }
     ],
     "react/prop-types": [
