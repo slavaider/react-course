@@ -1,4 +1,4 @@
-import { API_KEY, API_URL } from '../utils/constants';
+import { API_URL } from '../utils/constants';
 import { News, NewsParameters } from '../interfaces';
 
 type NewsResponse = {
@@ -36,13 +36,7 @@ export default class NewsApi {
         options as { parameters: NewsParameters },
       );
     }
-    const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-    const response = await fetch(`${proxyUrl}${requestQuery}`, {
-      ...options,
-      headers: {
-        Authorization: API_KEY,
-      },
-    });
+    const response = await fetch(requestQuery, options);
     return response.json();
   }
 

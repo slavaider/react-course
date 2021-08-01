@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import './App.scss';
 import ReactPaginate from 'react-paginate';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore  '@types/newsapi@*' is not in the npm registry.
+import NewsAPI from 'newsapi';
 import CardWrapper from '../card-wrapper/CardWrapper';
 import SearchBar from '../search-bar/SearchBar';
 import { News } from '../../interfaces';
-import NewsApi from '../../libs/NewsApi';
 import { API_KEY } from '../../utils/constants';
 import Loader from '../loader/Loader';
 
@@ -14,7 +16,10 @@ const App: React.FC = () => {
   const [length, setLength] = useState<number>(0);
   const [options, setOptions] = useState<Record<string, unknown>>({});
   const [page, setPage] = useState<number>(0);
-  const newsApi = new NewsApi();
+
+  const newsapi = new NewsAPI(API_KEY, {
+    corsProxyUrl: 'https://cors-anywhere.herokuapp.com/',
+  });
 
   async function searchNews(searchData: string, sortBy: string) {
     setLoading(true);
@@ -24,7 +29,12 @@ const App: React.FC = () => {
       qInTitle: searchData,
       sortBy,
     };
-    const data = await newsApi.getNews({ parameters: newOptions });
+
+    // Can use this on dev, because it ignore cors on deploy
+    // import NewsApi from '../../libs/NewsApi';
+    // const newsApi = new NewsApi();
+    // const data = newsApi.getNews(newOptions);
+    const data = await newsapi.v2.everything(newOptions);
 
     setPage(0);
     setOptions(newOptions);
@@ -36,7 +46,7 @@ const App: React.FC = () => {
   async function changePage({ selected }: { selected: number }) {
     setLoading(true);
     const newOptions = { ...options, page: selected + 1 };
-    const data = await newsApi.getNews({ parameters: newOptions });
+    const data = await newsapi.v2.everything(newOptions);
 
     setPage(selected);
     setNews(data.articles);
