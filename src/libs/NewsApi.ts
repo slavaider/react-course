@@ -36,7 +36,12 @@ export default class NewsApi {
         options as { parameters: NewsParameters },
       );
     }
-    const response = await fetch(requestQuery, options);
+    const response = await fetch(requestQuery, {
+      ...options,
+      headers: {
+        Authorization: (options as any).parameters.apiKey,
+      },
+    });
     return response.json();
   }
 
