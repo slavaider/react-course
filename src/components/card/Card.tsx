@@ -1,24 +1,26 @@
 import React from 'react';
 import './Card.scss';
-import img from '../../assets/img/test.jpg';
-import { User } from '../../interfaces';
+import { News } from '../../interfaces';
 
 type CardProps = {
-  user: User;
+  news: News;
 };
 
-const Card: React.FC<CardProps> = ({ user }: CardProps) => {
+const Card: React.FC<CardProps> = ({ news }: CardProps) => {
   return (
-    <div className="Card col-xs-12 col-md-4">
+    <div className="Card col-xs-12 col-md-3">
       <div className="card bg-dark text-white mx-1 my-1">
-        <img src={img} className="card-img-top" alt={user.firstName} />
+        <img src={news.urlToImage} className="card-img-top" alt={news.title} />
         <div className="card-body">
-          <p className="card-text text-center">FirstName: {user.firstName}</p>
-          <p className="card-text text-center">LastName: {user.lastName}</p>
-          <p className="card-text text-center">Country: {user.country}</p>
-          <p className="card-text text-center">Zip: {user.zip}</p>
-          <p className="card-text text-center">Birthday: {user.birthday}</p>
-          <p className="card-text text-center">Sex: {user.sex}</p>
+          <p className="card-text">Title: {news.title}</p>
+          <p className="card-text">Description: {news.description}</p>
+          <p className="card-text">Published: {news.publishedAt}</p>
+          <p className="card-text">Author: {news.author}</p>
+        </div>
+        <div className="card-footer">
+          <a href={news.url} target="_blank" rel="noreferrer">
+            Source
+          </a>
         </div>
       </div>
     </div>

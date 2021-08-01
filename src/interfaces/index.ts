@@ -1,4 +1,4 @@
-import User from './user';
-import UserForm from './user-form';
+import News from './news';
+import NewsParameters from './news-parametrs';
 
-export { User, UserForm };
+export { News, NewsParameters };

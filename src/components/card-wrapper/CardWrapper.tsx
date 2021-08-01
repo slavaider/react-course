@@ -1,17 +1,17 @@
 import React from 'react';
 import './CardWrapper.scss';
 import Card from '../card/Card';
-import { User } from '../../interfaces';
+import { News } from '../../interfaces';
 
 type CardProps = {
-  items: User[];
+  items: News[];
 };
 
 const CardWrapper: React.FC<CardProps> = ({ items }: CardProps) => {
   return (
     <div className="CardWrapper row">
-      {items.map((user, index) => {
-        return <Card key={`card-${index}`} user={user} />;
+      {items.map((news, index) => {
+        return <Card key={`card-${index}`} news={news} />;
       })}
     </div>
   );
