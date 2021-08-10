@@ -34,3 +34,25 @@ img {
   height: auto;
 }
 
+.my-node-enter {
+  opacity: 0;
+}
+.my-node-enter-active {
+  opacity: 1;
+  transition: opacity $fade-delay;
+}
+.my-node-exit {
+  opacity: 1;
+}
+.my-node-exit-active {
+  opacity: 0;
+  transition: opacity $fade-delay;
+}
+
+.img-small{
+  display: block;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto;
+}
+

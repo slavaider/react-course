@@ -1,14 +1,16 @@
 import React from 'react';
 import './Card.scss';
+import { Link } from 'react-router-dom';
 import { News } from '../../interfaces';
 
 type CardProps = {
   news: News;
+  details: boolean;
 };
 
-const Card: React.FC<CardProps> = ({ news }: CardProps) => {
+const Card: React.FC<CardProps> = ({ news, details }: CardProps) => {
   return (
-    <div className="Card col-xs-12 col-md-3">
+    <div className={`Card col-xs-12 ${details ? '' : 'col-md-3'}`}>
       <div className="card bg-dark text-white mx-1 my-1">
         <img src={news.urlToImage} className="card-img-top" alt={news.title} />
         <div className="card-body">
@@ -18,9 +20,23 @@ const Card: React.FC<CardProps> = ({ news }: CardProps) => {
           <p className="card-text">Author: {news.author}</p>
         </div>
         <div className="card-footer">
-          <a href={news.url} target="_blank" rel="noreferrer">
+          <a
+            href={news.url}
+            className="card-link"
+            target="_blank"
+            rel="noreferrer"
+          >
             Source
           </a>
+          {details ? (
+            <Link className="card-link ml-2" to="/">
+              Return
+            </Link>
+          ) : (
+            <Link className="card-link ml-2" to={`/details/${news.title}`}>
+              Details
+            </Link>
+          )}
         </div>
       </div>
     </div>
