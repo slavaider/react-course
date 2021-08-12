@@ -1,52 +1,57 @@
-import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
-import NewsApi from '../../libs/NewsApi';
-import { API_KEY } from '../../utils/constants';
+import React, { Component } from 'react';
+import { RouteComponentProps } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Loader from '../../components/loader/Loader';
-import { News } from '../../interfaces';
 import Card from '../../components/card/Card';
+import { ILoading, INews } from '../../store/types';
+import { getDetailedNews } from '../../store/actions/newsActions';
+import News from '../../interfaces/news';
 
-type RouterParams = {
-  title: string;
-};
+interface DetailsPageProps extends RouteComponentProps<{ title: string }> {
+  loading: boolean;
+  detailedNews?: News;
+  getDetailedNews: (arg0: string) => void;
+}
 
-const DetailsPage: React.FC = () => {
-  const { title } = useParams<RouterParams>();
-  const [news, setNews] = useState<News | undefined>(undefined);
-  const [loader, setLoading] = useState<boolean>(false);
-  const newsApi = new NewsApi();
-
-  async function getNews(searchData: string) {
-    const newOptions = {
-      apiKey: API_KEY,
-      qInTitle: searchData,
-    };
-    return newsApi.getNews({ parameters: newOptions });
+class DetailsPage extends Component<DetailsPageProps> {
+  constructor(props: DetailsPageProps) {
+    super(props);
+    const { title } = this.props.match.params;
+    this.props.getDetailedNews(title);
   }
 
-  useEffect(() => {
-    setLoading(false);
-    getNews(title).then((data) => {
-      setNews(data.articles[0]);
-      setLoading(true);
-    });
-  }, []);
+  render() {
+    const { loading, detailedNews } = this.props;
+    return (
+      <>
+        {loading ? (
+          <Loader />
+        ) : (
+          <>
+            {detailedNews ? (
+              <Card news={detailedNews} details={true} />
+            ) : (
+              <h1 className="text-white text-center mt-2">Data not found</h1>
+            )}
+          </>
+        )}
+      </>
+    );
+  }
+}
 
-  return (
-    <>
-      {loader ? (
-        <>
-          {news ? (
-            <Card news={news} details={true} />
-          ) : (
-            <h1 className="text-white text-center mt-2">Data not found</h1>
-          )}
-        </>
-      ) : (
-        <Loader />
-      )}
-    </>
-  );
-};
+function mapStateToProps(state: { loading: ILoading; news: INews }) {
+  return {
+    loading: state.loading.loading,
+    detailedNews: state.news.detailedNews,
+  };
+}
 
-export default DetailsPage;
+// eslint-disable-next-line
+function mapDispatchToProps(dispatch: any) {
+  return {
+    getDetailedNews: (title: string) => dispatch(getDetailedNews(title)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsPage);

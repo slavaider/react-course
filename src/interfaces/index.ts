@@ -1,4 +1,5 @@
 import News from './news';
 import NewsParameters from './news-parametrs';
+import NewsResponse from './news-response';
 
-export { News, NewsParameters };
+export { NewsResponse, News, NewsParameters };

@@ -1,11 +1,5 @@
 import { API_URL } from '../utils/constants';
-import { News, NewsParameters } from '../interfaces';
-
-type NewsResponse = {
-  status: string;
-  totalResults: number;
-  articles: Array<News>;
-};
+import { NewsResponse, NewsParameters } from '../interfaces';
 
 export default class NewsApi {
   private url: string;
