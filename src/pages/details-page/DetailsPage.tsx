@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Loader from '../../components/loader/Loader';
@@ -13,31 +13,29 @@ interface DetailsPageProps extends RouteComponentProps<{ title: string }> {
   getDetailedNews: (arg0: string) => void;
 }
 
-class DetailsPage extends Component<DetailsPageProps> {
-  constructor(props: DetailsPageProps) {
-    super(props);
-    const { title } = this.props.match.params;
-    this.props.getDetailedNews(title);
-  }
+function DetailsPage(props: DetailsPageProps) {
+  const { title } = props.match.params;
+  const { loading, detailedNews } = props;
 
-  render() {
-    const { loading, detailedNews } = this.props;
-    return (
-      <>
-        {loading ? (
-          <Loader />
-        ) : (
-          <>
-            {detailedNews ? (
-              <Card news={detailedNews} details={true} />
-            ) : (
-              <h1 className="text-white text-center mt-2">Data not found</h1>
-            )}
-          </>
-        )}
-      </>
-    );
-  }
+  useEffect(() => {
+    props.getDetailedNews(title);
+  }, []);
+
+  return (
+    <>
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          {detailedNews ? (
+            <Card news={detailedNews} details={true} />
+          ) : (
+            <h1 className="text-white text-center mt-2">Data not found</h1>
+          )}
+        </>
+      )}
+    </>
+  );
 }
 
 function mapStateToProps(state: { loading: ILoading; news: INews }) {

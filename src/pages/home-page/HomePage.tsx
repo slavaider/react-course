@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ReactPaginate from 'react-paginate';
 import { connect } from 'react-redux';
 import SearchBar from '../../components/search-bar/SearchBar';
@@ -18,45 +18,43 @@ type HomePageProps = {
   changePage: (obj: { selected: number }) => void;
 };
 
-class HomePage extends Component<HomePageProps> {
-  render() {
-    const { news, page, length, loading } = this.props;
-    return (
-      <>
-        <div className="page-wrapper">
-          <SearchBar searchHandler={this.props.searchNews} />
-          {loading ? <Loader /> : <CardWrapper items={news} />}
-          {news.length > 0 ? (
-            <ReactPaginate
-              containerClassName={'pagination'}
-              pageClassName={'page-item'}
-              pageLinkClassName={'page-link'}
-              activeClassName={'active'}
-              // Prev
-              previousClassName={'page-item'}
-              previousLinkClassName={'page-link'}
-              previousLabel={'<'}
-              // Next
-              nextClassName={'page-item'}
-              nextLinkClassName={'page-link'}
-              nextLabel={'>'}
-              // Break
-              breakClassName={'page-item'}
-              breakLinkClassName={'page-link'}
-              breakLabel={'...'}
-              // Count if > 5 pages -> pay money to api -_-
-              pageCount={length > 5 ? 5 : length}
-              pageRangeDisplayed={5}
-              marginPagesDisplayed={5}
-              forcePage={page}
-              // Actions
-              onPageChange={this.props.changePage}
-            />
-          ) : null}
-        </div>
-      </>
-    );
-  }
+function HomePage(props: HomePageProps) {
+  const { news, page, length, loading } = props;
+  return (
+    <>
+      <div className="page-wrapper">
+        <SearchBar searchHandler={props.searchNews} />
+        {loading ? <Loader /> : <CardWrapper items={news} />}
+        {news.length > 0 ? (
+          <ReactPaginate
+            containerClassName={'pagination'}
+            pageClassName={'page-item'}
+            pageLinkClassName={'page-link'}
+            activeClassName={'active'}
+            // Prev
+            previousClassName={'page-item'}
+            previousLinkClassName={'page-link'}
+            previousLabel={'<'}
+            // Next
+            nextClassName={'page-item'}
+            nextLinkClassName={'page-link'}
+            nextLabel={'>'}
+            // Break
+            breakClassName={'page-item'}
+            breakLinkClassName={'page-link'}
+            breakLabel={'...'}
+            // Count if > 5 pages -> pay money to api -_-
+            pageCount={length > 5 ? 5 : length}
+            pageRangeDisplayed={5}
+            marginPagesDisplayed={5}
+            forcePage={page}
+            // Actions
+            onPageChange={props.changePage}
+          />
+        ) : null}
+      </div>
+    </>
+  );
 }
 
 function mapStateToProps(state: { loading: ILoading; news: INews }) {
