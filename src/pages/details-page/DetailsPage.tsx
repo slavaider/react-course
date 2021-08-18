@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Loader from '../../components/loader/Loader';
 import Card from '../../components/card/Card';
 import { ILoading, INews } from '../../store/types';
-import { getDetailedNews } from '../../store/actions/newsActions';
+import { getDetailedNews } from '../../store/actions/news-actions/newsActions';
 import News from '../../interfaces/news';
 
 interface DetailsPageProps extends RouteComponentProps<{ title: string }> {
@@ -18,7 +18,7 @@ function DetailsPage(props: DetailsPageProps) {
   const { loading, detailedNews } = props;
 
   useEffect(() => {
-    props.getDetailedNews(title);
+    if (title) props.getDetailedNews(title);
   }, []);
 
   return (

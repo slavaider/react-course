@@ -7,7 +7,10 @@ import CardWrapper from '../../components/card-wrapper/CardWrapper';
 import withFade from '../../hoc/fade-hoc/WithFade';
 import { ILoading, INews } from '../../store/types';
 import { News } from '../../interfaces';
-import { changePage, searchNews } from '../../store/actions/newsActions';
+import {
+  changePage,
+  searchNews,
+} from '../../store/actions/news-actions/newsActions';
 
 type HomePageProps = {
   loading: boolean;

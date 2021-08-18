@@ -12,12 +12,25 @@ const Card: React.FC<CardProps> = ({ news, details }: CardProps) => {
   return (
     <div className={`Card col-xs-12 ${details ? '' : 'col-md-3'}`}>
       <div className="card bg-dark text-white mx-1 my-1">
-        <img src={news.urlToImage} className="card-img-top" alt={news.title} />
+        <img
+          aria-label="image"
+          src={news.urlToImage}
+          className="card-img-top"
+          alt={news.title}
+        />
         <div className="card-body">
-          <p className="card-text">Title: {news.title}</p>
-          <p className="card-text">Description: {news.description}</p>
-          <p className="card-text">Published: {news.publishedAt}</p>
-          <p className="card-text">Author: {news.author}</p>
+          <p aria-label="title" className="card-text">
+            Title: {news.title}
+          </p>
+          <p aria-label="description" className="card-text">
+            Description: {news.description}
+          </p>
+          <p aria-label="publishedAt" className="card-text">
+            Published: {news.publishedAt}
+          </p>
+          <p aria-label="author" className="card-text">
+            Author: {news.author}
+          </p>
         </div>
         <div className="card-footer">
           <a

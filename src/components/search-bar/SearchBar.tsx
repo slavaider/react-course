@@ -20,11 +20,16 @@ const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <div className="SearchBar row">
       <div className="searchbar">
-        <form className="form" onSubmit={searchSubmit}>
+        <form
+          className="form"
+          aria-label="search-bar-form"
+          onSubmit={searchSubmit}
+        >
           <label className="form-label">
             <p className="text-white">Sort:</p>
             <select
               name="sort"
+              aria-label="sort"
               className="form-select"
               defaultValue="publishedAt"
             >
@@ -37,11 +42,16 @@ const SearchBar: React.FC<SearchBarProps> = ({
             <input
               className="form-control"
               name="search"
+              aria-label="search"
               required
               type="search"
               placeholder="Search..."
             />
-            <button className="search_icon" type="submit">
+            <button
+              className="search_icon"
+              aria-label="search-submit"
+              type="submit"
+            >
               <i className="fas fa-search" />
             </button>
           </div>

@@ -1,6 +1,12 @@
-import { createStore, compose, applyMiddleware } from 'redux';
+import {createStore, compose, applyMiddleware, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
-import rootReducer from './reducers/rootReducer';
+import newsReducer from "./reducers/news-reducer/newsReducer";
+import loadingReducer from "./reducers/loading-reducer/loadingReducer";
+
+const reducer = combineReducers({
+  news: newsReducer,
+  loading: loadingReducer,
+});
 
 const composeEnhancers =
   process.env.NODE_ENV !== 'production' &&
@@ -10,7 +16,7 @@ const composeEnhancers =
     : compose;
 
 const store = createStore(
-  rootReducer,
+    reducer,
   composeEnhancers(applyMiddleware(thunk)),
 );
 

@@ -1,0 +1,328 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="CardWrapper row"
+      >
+        <div
+          class="Card col-xs-12 col-md-3"
+        >
+          <div
+            class="card bg-dark text-white mx-1 my-1"
+          >
+            <img
+              alt=""
+              aria-label="image"
+              class="card-img-top"
+              src=""
+            />
+            <div
+              class="card-body"
+            >
+              <p
+                aria-label="title"
+                class="card-text"
+              >
+                Title: 
+                
+              </p>
+              <p
+                aria-label="description"
+                class="card-text"
+              >
+                Description: 
+                
+              </p>
+              <p
+                aria-label="publishedAt"
+                class="card-text"
+              >
+                Published: 
+                
+              </p>
+              <p
+                aria-label="author"
+                class="card-text"
+              >
+                Author: 
+                
+              </p>
+            </div>
+            <div
+              class="card-footer"
+            >
+              <a
+                class="card-link"
+                href=""
+                rel="noreferrer"
+                target="_blank"
+              >
+                Source
+              </a>
+              <a
+                class="card-link ml-2"
+                href="/details/"
+              >
+                Details
+              </a>
+            </div>
+          </div>
+        </div>
+        <div
+          class="Card col-xs-12 col-md-3"
+        >
+          <div
+            class="card bg-dark text-white mx-1 my-1"
+          >
+            <img
+              alt=""
+              aria-label="image"
+              class="card-img-top"
+              src=""
+            />
+            <div
+              class="card-body"
+            >
+              <p
+                aria-label="title"
+                class="card-text"
+              >
+                Title: 
+                
+              </p>
+              <p
+                aria-label="description"
+                class="card-text"
+              >
+                Description: 
+                
+              </p>
+              <p
+                aria-label="publishedAt"
+                class="card-text"
+              >
+                Published: 
+                
+              </p>
+              <p
+                aria-label="author"
+                class="card-text"
+              >
+                Author: 
+                
+              </p>
+            </div>
+            <div
+              class="card-footer"
+            >
+              <a
+                class="card-link"
+                href=""
+                rel="noreferrer"
+                target="_blank"
+              >
+                Source
+              </a>
+              <a
+                class="card-link ml-2"
+                href="/details/"
+              >
+                Details
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="CardWrapper row"
+    >
+      <div
+        class="Card col-xs-12 col-md-3"
+      >
+        <div
+          class="card bg-dark text-white mx-1 my-1"
+        >
+          <img
+            alt=""
+            aria-label="image"
+            class="card-img-top"
+            src=""
+          />
+          <div
+            class="card-body"
+          >
+            <p
+              aria-label="title"
+              class="card-text"
+            >
+              Title: 
+              
+            </p>
+            <p
+              aria-label="description"
+              class="card-text"
+            >
+              Description: 
+              
+            </p>
+            <p
+              aria-label="publishedAt"
+              class="card-text"
+            >
+              Published: 
+              
+            </p>
+            <p
+              aria-label="author"
+              class="card-text"
+            >
+              Author: 
+              
+            </p>
+          </div>
+          <div
+            class="card-footer"
+          >
+            <a
+              class="card-link"
+              href=""
+              rel="noreferrer"
+              target="_blank"
+            >
+              Source
+            </a>
+            <a
+              class="card-link ml-2"
+              href="/details/"
+            >
+              Details
+            </a>
+          </div>
+        </div>
+      </div>
+      <div
+        class="Card col-xs-12 col-md-3"
+      >
+        <div
+          class="card bg-dark text-white mx-1 my-1"
+        >
+          <img
+            alt=""
+            aria-label="image"
+            class="card-img-top"
+            src=""
+          />
+          <div
+            class="card-body"
+          >
+            <p
+              aria-label="title"
+              class="card-text"
+            >
+              Title: 
+              
+            </p>
+            <p
+              aria-label="description"
+              class="card-text"
+            >
+              Description: 
+              
+            </p>
+            <p
+              aria-label="publishedAt"
+              class="card-text"
+            >
+              Published: 
+              
+            </p>
+            <p
+              aria-label="author"
+              class="card-text"
+            >
+              Author: 
+              
+            </p>
+          </div>
+          <div
+            class="card-footer"
+          >
+            <a
+              class="card-link"
+              href=""
+              rel="noreferrer"
+              target="_blank"
+            >
+              Source
+            </a>
+            <a
+              class="card-link ml-2"
+              href="/details/"
+            >
+              Details
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

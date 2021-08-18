@@ -16,6 +16,7 @@ function withFade<T>(Child: React.ComponentType<T>): React.FC<T> {
     return (
       <CSSTransition
         nodeRef={nodeRef}
+        aria-label="transition"
         in={isShow}
         timeout={fadeDelay}
         classNames="my-node"

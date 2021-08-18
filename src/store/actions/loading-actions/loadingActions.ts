@@ -1,5 +1,5 @@
-import { LOADING_OFF, LOADING_ON } from './actionTypes';
-import { LoadingActionTypes } from '../types';
+import { LOADING_OFF, LOADING_ON } from '../actionTypes';
+import { LoadingActionTypes } from '../../types';
 
 export const loaderOff = (): LoadingActionTypes => {
   return {

@@ -1,12 +1,10 @@
-import { ActionTypes, NewsActionTypes } from '../types';
-import { API_KEY } from '../../utils/constants';
-import { CHANGE_PAGE, GET_DETAILED_NEWS, GET_NEWS } from './actionTypes';
-import { loaderOff, loaderOn } from './loadingActions';
-import NewsApi from '../../libs/NewsApi';
-import { NewsResponse } from '../../interfaces';
-import News from '../../interfaces/news';
-
-const newsApi = new NewsApi();
+import axios from 'axios';
+import { ActionTypes, NewsActionTypes } from '../../types';
+import { API_KEY, API_URL } from '../../../utils/constants';
+import { CHANGE_PAGE, GET_DETAILED_NEWS, GET_NEWS } from '../actionTypes';
+import { loaderOff, loaderOn } from '../loading-actions/loadingActions';
+import { NewsResponse } from '../../../interfaces';
+import News from '../../../interfaces/news';
 
 export const syncSearchNews = (
   data: NewsResponse,
@@ -56,8 +54,10 @@ export const searchNews = (searchData: string, sortBy: string) => {
       qInTitle: searchData,
       sortBy,
     };
-    const data = await newsApi.getNews({ parameters: newOptions });
-    dispatch(syncSearchNews(data, newOptions));
+    const response = await axios.get(API_URL, {
+      params: newOptions,
+    });
+    dispatch(syncSearchNews(response.data, newOptions));
 
     dispatch(loaderOff());
   };
@@ -72,10 +72,10 @@ export const changePage = ({ selected }: { selected: number }) => {
 
     const state = getState();
     const { options } = state.news;
-    const data = await newsApi.getNews({
-      parameters: { ...options, page: selected + 1 },
+    const response = await axios.get(API_URL, {
+      params: { ...options, page: selected + 1 },
     });
-    dispatch(syncChangePage(data, selected));
+    dispatch(syncChangePage(response.data, selected));
 
     dispatch(loaderOff());
   };
@@ -89,8 +89,10 @@ export const getDetailedNews = (title: string) => {
       apiKey: API_KEY,
       qInTitle: title,
     };
-    const data = await newsApi.getNews({ parameters: newOptions });
-    dispatch(syncGetDetailedNews(data.articles[0]));
+    const response = await axios.get(API_URL, {
+      params: newOptions,
+    });
+    dispatch(syncGetDetailedNews(response.data.articles[0]));
 
     dispatch(loaderOff());
   };

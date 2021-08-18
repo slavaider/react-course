@@ -1,0 +1,218 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        aria-label="transition"
+        class="wrapper my-node-enter"
+      >
+        <div
+          class="page-wrapper"
+        >
+          <div
+            class="SearchBar row"
+          >
+            <div
+              class="searchbar"
+            >
+              <form
+                aria-label="search-bar-form"
+                class="form"
+              >
+                <label
+                  class="form-label"
+                >
+                  <p
+                    class="text-white"
+                  >
+                    Sort:
+                  </p>
+                  <select
+                    aria-label="sort"
+                    class="form-select"
+                    name="sort"
+                  >
+                    <option
+                      selected=""
+                      value="publishedAt"
+                    >
+                      Published
+                    </option>
+                    <option
+                      value="popularity"
+                    >
+                      Popularity
+                    </option>
+                    <option
+                      value="relevancy"
+                    >
+                      Relevancy
+                    </option>
+                  </select>
+                </label>
+                <div
+                  class="search-wrapper"
+                >
+                  <input
+                    aria-label="search"
+                    class="form-control"
+                    name="search"
+                    placeholder="Search..."
+                    required=""
+                    type="search"
+                  />
+                  <button
+                    aria-label="search-submit"
+                    class="search_icon"
+                    type="submit"
+                  >
+                    <i
+                      class="fas fa-search"
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div
+            class="CardWrapper row"
+          />
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      aria-label="transition"
+      class="wrapper my-node-enter"
+    >
+      <div
+        class="page-wrapper"
+      >
+        <div
+          class="SearchBar row"
+        >
+          <div
+            class="searchbar"
+          >
+            <form
+              aria-label="search-bar-form"
+              class="form"
+            >
+              <label
+                class="form-label"
+              >
+                <p
+                  class="text-white"
+                >
+                  Sort:
+                </p>
+                <select
+                  aria-label="sort"
+                  class="form-select"
+                  name="sort"
+                >
+                  <option
+                    selected=""
+                    value="publishedAt"
+                  >
+                    Published
+                  </option>
+                  <option
+                    value="popularity"
+                  >
+                    Popularity
+                  </option>
+                  <option
+                    value="relevancy"
+                  >
+                    Relevancy
+                  </option>
+                </select>
+              </label>
+              <div
+                class="search-wrapper"
+              >
+                <input
+                  aria-label="search"
+                  class="form-control"
+                  name="search"
+                  placeholder="Search..."
+                  required=""
+                  type="search"
+                />
+                <button
+                  aria-label="search-submit"
+                  class="search_icon"
+                  type="submit"
+                >
+                  <i
+                    class="fas fa-search"
+                  />
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div
+          class="CardWrapper row"
+        />
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

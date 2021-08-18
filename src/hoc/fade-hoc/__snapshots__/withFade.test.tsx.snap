@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <div
+    aria-label="transition"
+    class="wrapper my-node-enter my-node-enter-active"
+  >
+    <div
+      class="Loader"
+    >
+      <div
+        class="lds-ring"
+      >
+        <div />
+        <div />
+        <div />
+      </div>
+    </div>
+  </div>
+</div>
+`;

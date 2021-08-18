@@ -1,15 +1,15 @@
-import { LOADING_OFF, LOADING_ON } from '../actions/actionTypes';
-import { ILoading, LoadingActionTypes } from '../types';
+import { LOADING_OFF, LOADING_ON } from '../../actions/actionTypes';
+import { ILoading, LoadingActionTypes } from '../../types';
 
-const initialState: ILoading = {
+export const initialState: ILoading = {
   loading: false,
 };
 
 export default function loadingReducer(
   state = initialState,
-  action: LoadingActionTypes,
+  action: LoadingActionTypes | undefined,
 ): ILoading {
-  switch (action.type) {
+  switch (action?.type) {
     case LOADING_OFF: {
       return {
         loading: false,

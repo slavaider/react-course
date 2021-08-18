@@ -2,10 +2,10 @@ import {
   CHANGE_PAGE,
   GET_DETAILED_NEWS,
   GET_NEWS,
-} from '../actions/actionTypes';
-import { INews, NewsActionTypes } from '../types';
+} from '../../actions/actionTypes';
+import { INews, NewsActionTypes } from '../../types';
 
-const initialState: INews = {
+export const initialState: INews = {
   length: 0,
   news: [],
   options: {},
@@ -15,9 +15,9 @@ const initialState: INews = {
 
 export default function NewsReducer(
   state = initialState,
-  action: NewsActionTypes,
+  action: NewsActionTypes | undefined,
 ): INews | Partial<INews> {
-  switch (action.type) {
+  switch (action?.type) {
     case GET_NEWS: {
       return {
         ...state,
