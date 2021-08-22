@@ -10,13 +10,13 @@ describe('loading tests', () => {
     expect(store.getState()).toEqual(initialState);
   });
 
-  test('sync SearchNews', () => {
+  test('turn loading on', () => {
     const action: LoadingActionTypes = { type: LOADING_ON };
     store.dispatch(action);
     expect(store.getState().loading).toEqual(true);
   });
 
-  test('turn loading on', () => {
+  test('turn loading off', () => {
     const action: LoadingActionTypes = { type: LOADING_OFF };
     store.dispatch(action);
     expect(store.getState().loading).toEqual(false);
