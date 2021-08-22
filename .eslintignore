@@ -1,0 +1,6 @@
+/node_modules
+webpack.config.js
+postcss.config.js
+jest.config.js
+src/store/store.ts
+src/custom.d.ts
