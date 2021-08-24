@@ -9,6 +9,7 @@
 # production
 /dist
 /.idea
+/public
 
 # misc
 .DS_Store

@@ -8,13 +8,11 @@ import App from './components/app/App';
 import 'bootstrap/dist/js/bootstrap.min';
 import store from './store/store';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
-  </React.StrictMode>,
+ReactDOM.hydrate(
+  <Provider store={store}>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </Provider>,
   document.getElementById('root'),
 );
