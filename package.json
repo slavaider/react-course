@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "scripts": {
     "start": "webpack serve --mode development",
-    "ssr": "npm run build && nodemon",
-    "netify": "npm run build && ts-node src/server.tsx",
+    "start:ssr": "npm run build && nodemon",
     "build": "webpack --mode production --optimization-minimize",
     "lint": "eslint src --fix"
   },
