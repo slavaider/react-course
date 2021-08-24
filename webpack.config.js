@@ -8,14 +8,14 @@ const isDev = process.env.npm_lifecycle_event === 'start';
 
 module.exports = {
   output: {
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
     publicPath: '/',
   },
   mode: isDev ? 'development' : 'production',
   devtool: isDev ? 'inline-source-map' : false,
   devServer: {
-    contentBase: path.join(__dirname, 'public'),
+    contentBase: path.join(__dirname, 'dist'),
     historyApiFallback: true,
     port: 4000,
     open: true,
@@ -102,7 +102,7 @@ module.exports = {
       extensions: ['js', 'jsx', 'ts', 'tsx'],
     }),
     new CleanWebpackPlugin({
-      root: path.resolve(__dirname, 'public'),
+      root: path.resolve(__dirname, 'dist'),
       verbose: true,
       dry: false
     }),
@@ -110,7 +110,7 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/assets'),
-          to: path.resolve(__dirname, 'public/assets'),
+          to: path.resolve(__dirname, 'dist/assets'),
         },
       ],
     }),

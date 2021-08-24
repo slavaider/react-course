@@ -11,7 +11,7 @@ import store from './store/store';
 const app = express();
 
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static('dist'));
 
 const PORT = process.env.PORT || 3000;
 
