@@ -5,8 +5,9 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDev = process.env.npm_lifecycle_event === 'start';
+const htmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+const config =  {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -53,10 +54,7 @@ module.exports = {
           {
             loader: 'css-loader',
           },
-          {
-            // Then we apply postCSS fixes like autoprefixer and minifying
-            loader: 'postcss-loader',
-          },
+          {loader: 'postcss-loader'},
           {
             // First we transform SASS to standard CSS
             loader: 'sass-loader',
@@ -116,3 +114,12 @@ module.exports = {
     }),
   ],
 };
+
+if(isDev){
+  config.plugins.push(new htmlWebpackPlugin({
+    template:  './src/index.html'
+  }))
+}
+
+module.exports = config
+
