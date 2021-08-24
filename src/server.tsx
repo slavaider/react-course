@@ -24,7 +24,7 @@ function renderHTML(componentHTML: string) {
            <link rel="icon" href="assets/img/favicon.ico">
            <script src="https://kit.fontawesome.com/af9c927aab.js" crossorigin="anonymous"></script>
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>SSRt</title>
+          <title>SSR</title>
           <link rel="stylesheet" href="/css/bundle.css">
       </head>
       <body>

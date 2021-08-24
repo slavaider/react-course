@@ -4,6 +4,7 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "ssr": "npm run build && nodemon",
+    "netify": "npm run build && ts-node src/server.tsx",
     "build": "webpack --mode production --optimization-minimize",
     "lint": "eslint src --fix"
   },
