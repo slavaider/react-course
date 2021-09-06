@@ -5,18 +5,15 @@ import ProfileForm from '../profile-form/ProfileForm';
 import { User } from '../../interfaces';
 
 const App: React.FC = () => {
-  const [users, setUsers] = useState<Array<User>>([]);
-
-  function addUser(user: User) {
-    const newUserArray = [...users];
-
-    newUserArray.push(user);
-    setUsers(newUserArray);
-  }
+  const [users, setUsers] = useState<User[]>([]);
 
   return (
     <div className="App container">
-      <ProfileForm addUserHandler={addUser} />
+      <ProfileForm
+        addUser={(user: User) => {
+          setUsers([...users, user]);
+        }}
+      />
       <CardWrapper items={users} />
     </div>
   );

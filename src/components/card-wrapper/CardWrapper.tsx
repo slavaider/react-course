@@ -10,8 +10,8 @@ type CardProps = {
 const CardWrapper: React.FC<CardProps> = ({ items }: CardProps) => {
   return (
     <div className="CardWrapper row">
-      {items.map((user, index) => {
-        return <Card key={`card-${index}`} user={user} />;
+      {items.map((item, index) => {
+        return <Card key={`card-${index}`} item={item} />;
       })}
     </div>
   );

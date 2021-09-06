@@ -1,20 +1,19 @@
 import React, { FormEvent } from 'react';
 import './ProfileForm.scss';
 import { User, UserForm } from '../../interfaces';
-import FirstNameInput from './first-name-input/FirstNameInput';
-import LastNameInput from './last-name-input/LastNameInput';
 import CountryInput from './country-input/CountryInput';
 import ZipInput from './zip-input/ZipInput';
 import BirthdayInput from './birthday-input/BirthdayInput';
-import SexSwitch from './sex-switch/SexSwitch';
 import AgreeCheck from './agree-check/AgreeCheck';
+import MyInput from '../MyInput';
+import MySwitch from '../MySwitch';
 
 type FormProps = {
-  addUserHandler: (arg0: User) => void;
+  addUser: (arg0: User) => void;
 };
 
-const ProfileForm: React.FC<FormProps> = ({ addUserHandler }: FormProps) => {
-  function submitUser(event: FormEvent) {
+const ProfileForm: React.FC<FormProps> = ({ addUser }: FormProps) => {
+  const onFormSubmit = (event: FormEvent) => {
     const form = event.target as HTMLFormElement;
     event.preventDefault();
 
@@ -27,30 +26,45 @@ const ProfileForm: React.FC<FormProps> = ({ addUserHandler }: FormProps) => {
         country: country.value,
         zip: zip.value,
         birthday: birthday.value,
-        sex: sex.value === 'true' ? 'female' : 'male',
+        sex: sex.value,
       };
       form.reset();
       form.classList.remove('was-validated');
-      addUserHandler(user);
+      addUser(user);
       return;
     }
 
     form.classList.add('was-validated');
-  }
+  };
 
   return (
     <div className="ProfileForm row">
       <form
         className="row bg-white p-2 g-3 needs-validation"
         noValidate
-        onSubmit={submitUser}
+        onSubmit={onFormSubmit}
       >
-        <FirstNameInput />
-        <LastNameInput />
+        <MyInput
+          type="text"
+          label={'First name'}
+          id="firstName"
+          name="firstName"
+        />
+        <MyInput
+          type="text"
+          label={'Last name'}
+          id="lastName"
+          name="lastName"
+        />
         <CountryInput />
         <ZipInput />
         <BirthdayInput />
-        <SexSwitch />
+        <MySwitch
+          name="sex"
+          id="switch"
+          trueText={'Female'}
+          falseText={'Male'}
+        />
         <AgreeCheck />
         <div className="col-12">
           <button className="btn btn-dark" type="submit">
