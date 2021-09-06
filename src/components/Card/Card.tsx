@@ -1,10 +1,7 @@
 import React from 'react';
 import './Card.scss';
 import img from '../../assets/img/test.jpg';
-
-type CardProps = {
-  name: string;
-};
+import { CardProps } from './Card.model';
 
 const Card: React.FC<CardProps> = ({ name }: CardProps) => {
   return (

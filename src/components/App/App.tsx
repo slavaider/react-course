@@ -1,6 +1,6 @@
 import React from 'react';
-import CardWrapper from '../card-wrapper/CardWrapper';
-import SearchBar from '../search-bar/SearchBar';
+import CardWrapper from '../CardWrapper';
+import SearchBar from '../SearchBar';
 import './App.scss';
 
 const App: React.FC = () => {

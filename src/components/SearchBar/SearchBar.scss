@@ -1,15 +1,13 @@
 .SearchBar {
-  .searchbar {
-    position: relative;
-    margin-bottom: auto;
-    margin-top: auto;
-    height: 60px;
-    background-color: #353b48;
-    border-radius: 30px;
-    padding: 10px;
-  }
+  position: relative;
+  margin-bottom: auto;
+  margin-top: auto;
+  height: 60px;
+  background-color: #353b48;
+  border-radius: 30px;
+  padding: 10px;
 
-  .search_input {
+  &_input {
     color: white;
     border: 0;
     width: 100%;
@@ -20,7 +18,7 @@
     caret-color: red;
   }
 
-  .search_icon {
+  &_icon {
     position: absolute;
     top: 50%;
     right: 20px;
