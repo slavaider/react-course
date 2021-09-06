@@ -1,0 +1,20 @@
+import React from 'react';
+import './CardWrapper.scss';
+import Card from '../card/Card';
+import { User } from '../../interfaces';
+
+type CardProps = {
+  items: User[];
+};
+
+const CardWrapper: React.FC<CardProps> = ({ items }: CardProps) => {
+  return (
+    <div className="CardWrapper row">
+      {items.map((item, index) => {
+        return <Card key={`card-${index}`} item={item} />;
+      })}
+    </div>
+  );
+};
+
+export default CardWrapper;
