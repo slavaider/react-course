@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from '../card/Card';
+import Card from '../Card';
 
 const CardWrapper: React.FC = () => {
   const cardList = new Array(10);
