@@ -37,7 +37,7 @@ const DetailsPage: React.FC = () => {
       {loader ? (
         <>
           {news ? (
-            <Card news={news} details={true} />
+            <Card item={news} details={true} />
           ) : (
             <h1 className="text-white text-center mt-2">Data not found</h1>
           )}

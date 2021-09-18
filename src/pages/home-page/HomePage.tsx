@@ -8,6 +8,8 @@ import NewsApi from '../../libs/NewsApi';
 import { API_KEY } from '../../utils/constants';
 import withFade from '../../hoc/fade-hoc/WithFade';
 
+const pageSize = 5;
+
 const HomePage: React.FC = () => {
   const [news, setNews] = useState<Array<News>>([]);
   const [loader, setLoading] = useState<boolean>(false);
@@ -67,9 +69,9 @@ const HomePage: React.FC = () => {
             breakLinkClassName={'page-link'}
             breakLabel={'...'}
             // Count if > 5 pages -> pay money to api -_-
-            pageCount={length > 5 ? 5 : length}
-            pageRangeDisplayed={5}
-            marginPagesDisplayed={5}
+            pageCount={length > pageSize ? pageSize : length}
+            pageRangeDisplayed={pageSize}
+            marginPagesDisplayed={pageSize}
             forcePage={page}
             // Actions
             onPageChange={changePage}
