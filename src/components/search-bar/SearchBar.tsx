@@ -8,7 +8,7 @@ type SearchBarProps = {
 const SearchBar: React.FC<SearchBarProps> = ({
   searchHandler,
 }: SearchBarProps) => {
-  function searchSubmit(event: FormEvent) {
+  function handleSubmit(event: FormEvent) {
     event.preventDefault();
 
     const searchData = (event.target as HTMLFormElement).search.value;
@@ -20,7 +20,7 @@ const SearchBar: React.FC<SearchBarProps> = ({
   return (
     <div className="SearchBar row">
       <div className="searchbar">
-        <form className="form" onSubmit={searchSubmit}>
+        <form className="form" onSubmit={handleSubmit}>
           <label className="form-label">
             <p className="text-white">Sort:</p>
             <select

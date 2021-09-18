@@ -28,7 +28,7 @@ function DetailsPage(props: DetailsPageProps) {
       ) : (
         <>
           {detailedNews ? (
-            <Card news={detailedNews} details={true} />
+            <Card item={detailedNews} details={true} />
           ) : (
             <h1 className="text-white text-center mt-2">Data not found</h1>
           )}

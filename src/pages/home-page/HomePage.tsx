@@ -9,6 +9,8 @@ import { ILoading, INews } from '../../store/types';
 import { News } from '../../interfaces';
 import { changePage, searchNews } from '../../store/actions/newsActions';
 
+const pageSize = 5;
+
 type HomePageProps = {
   loading: boolean;
   length: number;
@@ -44,9 +46,9 @@ function HomePage(props: HomePageProps) {
             breakLinkClassName={'page-link'}
             breakLabel={'...'}
             // Count if > 5 pages -> pay money to api -_-
-            pageCount={length > 5 ? 5 : length}
-            pageRangeDisplayed={5}
-            marginPagesDisplayed={5}
+            pageCount={length > pageSize ? pageSize : length}
+            pageRangeDisplayed={pageSize}
+            marginPagesDisplayed={pageSize}
             forcePage={page}
             // Actions
             onPageChange={props.changePage}
