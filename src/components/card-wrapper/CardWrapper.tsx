@@ -11,7 +11,7 @@ const CardWrapper: React.FC<CardProps> = ({ items }: CardProps) => {
   return (
     <div className="CardWrapper row">
       {items.map((news, index) => {
-        return <Card key={`card-${index}`} news={news} />;
+        return <Card key={`card-${index}`} item={news} />;
       })}
     </div>
   );

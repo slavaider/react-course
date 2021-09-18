@@ -3,22 +3,22 @@ import './Card.scss';
 import { News } from '../../interfaces';
 
 type CardProps = {
-  news: News;
+  item: News;
 };
 
-const Card: React.FC<CardProps> = ({ news }: CardProps) => {
+const Card: React.FC<CardProps> = ({ item }: CardProps) => {
   return (
     <div className="Card col-xs-12 col-md-3">
       <div className="card bg-dark text-white mx-1 my-1">
-        <img src={news.urlToImage} className="card-img-top" alt={news.title} />
+        <img src={item.urlToImage} className="card-img-top" alt={item.title} />
         <div className="card-body">
-          <p className="card-text">Title: {news.title}</p>
-          <p className="card-text">Description: {news.description}</p>
-          <p className="card-text">Published: {news.publishedAt}</p>
-          <p className="card-text">Author: {news.author}</p>
+          <p className="card-text">Title: {item.title}</p>
+          <p className="card-text">Description: {item.description}</p>
+          <p className="card-text">Published: {item.publishedAt}</p>
+          <p className="card-text">Author: {item.author}</p>
         </div>
         <div className="card-footer">
-          <a href={news.url} target="_blank" rel="noreferrer">
+          <a href={item.url} target="_blank" rel="noreferrer">
             Source
           </a>
         </div>

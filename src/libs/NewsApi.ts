@@ -4,7 +4,7 @@ import { News, NewsParameters } from '../interfaces';
 type NewsResponse = {
   status: string;
   totalResults: number;
-  articles: Array<News>;
+  articles: News[];
 };
 
 export default class NewsApi {
